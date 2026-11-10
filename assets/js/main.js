@@ -679,7 +679,7 @@
   var reelEl = $('[data-reel]'), gridEl = $('[data-grid]');
   var reelST = null, reelTween = null;
   var dragState = { down: false, moved: false, x: 0, y: 0 };
-  function wantsHorizontal() { return motion && window.innerWidth >= 1024 && window.innerHeight >= 560 && state.visible.length >= 3; }
+  function wantsHorizontal() { return false && window.innerWidth >= 1024 && window.innerHeight >= 560 && state.visible.length >= 3; }
   function setupReel(fromFilter) {
     if (!motion) return;
     if (reelTween) { reelTween.scrollTrigger && reelTween.scrollTrigger.kill(); reelTween.kill(); reelTween = null; reelST = null; }
