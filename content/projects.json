@@ -1,3 +1,17 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "title": "AI perfume commercial",
+      "video": "https://drive.google.com/file/d/12HpYdq-lGr_gjL0Y1LeqrgZWHkg_kf_I/view?usp=sharing",
+      "thumbnail": "/uploads/project-213497e6-8108-4898-bcc1-9b29b790e157.png",
+      "category": "AI Ad",
+      "client": "",
+      "year": "",
+      "description": "",
+      "tags": [],
+      "format": "landscape",
+      "featured": false,
+      "hidden": false
+    }
+  ]
 }
