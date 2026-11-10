@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "title": "Film Production Showcase",
+      "video": "https://drive.google.com/file/d/1UQfU_h_Ck7WSF905VmsFU_XMBBfhiI5j/view?usp=sharing",
+      "thumbnail": "/uploads/film-production-showcase.jpg",
+      "category": "AI Film",
+      "client": "",
+      "year": "",
+      "description": "A 100% AI-crafted 4K short film for Domino English Learning Centre, where two characters chat about their daily routines in a sunlit seaside cafe. A cinematic drone-style opening, natural window light and classic shot-reverse-shot dialogue make it feel like a real film production.",
+      "tags": [],
+      "format": "landscape",
+      "featured": true,
+      "hidden": false
+    },
+    {
       "title": "AI Influencer Product Showcase",
       "video": "https://drive.google.com/file/d/1weIJAkz3kElEn5xwywfPveekqOtH6axY/view?usp=sharing",
       "thumbnail": "/uploads/ai-influencer-product-showcase.jpg",
