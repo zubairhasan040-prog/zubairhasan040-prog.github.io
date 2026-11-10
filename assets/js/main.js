@@ -801,7 +801,7 @@
       ' float lamp=exp(-dm*dm*3.5);',
       ' vec2 c1=vec2(.32*asp,.12); float blob=exp(-pow(length(p-c1+ (q-.5)*.4),2.)*2.6);',
       ' vec3 base=vec3(.043,.039,.031);',
-      ' vec3 coral=vec3(1.,.365,.31); vec3 cream=vec3(.969,.929,.722);',
+      ' vec3 coral=vec3(.184,.42,1.); vec3 cream=vec3(.969,.929,.722);',
       ' vec3 col=base;',
       ' float k=mix(.62,1.,clamp(asp-.4,0.,1.));',
       ' col+=coral*pow(f,2.6)*(.3+.85*blob+.6*lamp)*.62*k;',
