@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "title": "AI UGC Ad",
+      "video": "https://drive.google.com/file/d/1rwhReSIEPuF-1yj7Jb7fquGl45KCfmud/view?usp=sharing",
+      "thumbnail": "/uploads/ai-ugc-ad.jpg",
+      "category": "AI UGC",
+      "client": "",
+      "year": "",
+      "description": "A 100% AI-crafted UGC ad for Dari Mooch's De-Tan grooming range, with a relatable creator walking through a simple 3-step routine. Real-feel bathroom and shower scenes, close-up product shots and punchy cuts make it look like an authentic creator video that sells.",
+      "tags": [],
+      "format": "landscape",
+      "featured": true,
+      "hidden": false
+    },
+    {
       "title": "AI Avatar Style Editing",
       "video": "https://drive.google.com/file/d/1-uScwW27MarcnGrdNRw0fIzBevLNINOl/view?usp=sharing",
       "thumbnail": "/uploads/ai-avatar-style-editing.jpg",
