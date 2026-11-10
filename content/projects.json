@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "title": "AI Storytelling UGC Ad",
+      "video": "https://drive.google.com/file/d/1VoeEHTMRkvZ-kQutShHl_aIG5EzOu5ts/view?usp=sharing",
+      "thumbnail": "/uploads/ai-storytelling-ugc-ad.jpg",
+      "category": "AI UGC",
+      "client": "",
+      "year": "",
+      "description": "A 100% AI-crafted storytelling UGC ad for RoboApply, built around a relatable cafe moment that hooks you in the first second. Expressive reactions, punchy jump cuts, pop-up captions and app screen recordings make it feel like a real creator sharing a genuine find.",
+      "tags": [],
+      "format": "landscape",
+      "featured": true,
+      "hidden": false
+    },
+    {
       "title": "Film Production Showcase",
       "video": "https://drive.google.com/file/d/1UQfU_h_Ck7WSF905VmsFU_XMBBfhiI5j/view?usp=sharing",
       "thumbnail": "/uploads/film-production-showcase.jpg",
