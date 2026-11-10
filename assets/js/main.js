@@ -227,7 +227,7 @@
 
     // Photo (optional field). Falls back to the built-in cut-out.
     var photo = asset(site.photo);
-    if (photo && !/zubair-cut\.(webp|png)$/.test(photo)) {
+    if (photo && !/zubair-(cut|v4)\.(webp|png)$/.test(photo)) {
       $$('img[data-photo]').forEach(function (img) {
         var pic = img.parentNode;
         $$('source', pic).forEach(function (s) { s.parentNode.removeChild(s); });

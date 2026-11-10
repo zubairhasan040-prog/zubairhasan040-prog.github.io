@@ -8,7 +8,7 @@ index.html            the website
 assets/css/style.css  design
 assets/js/main.js     projects, filters, video player, all motion (preloader, WebGL hero, cursor…)
 assets/vendor/        GSAP + ScrollTrigger + Lenis (smooth scroll), stored locally — no CDN needed
-assets/img/           zubair-cut.webp/.png (cut-out photo), og-image.jpg (link preview)
+assets/img/           zubair-v4.webp/.png (cut-out photo), og-image.jpg (link preview)
 content/projects.json YOUR PROJECTS (edited from /admin — starts empty)
 content/site.json     your name, bio, email, socials, tools, skills
 admin/                the "Add project" editor (Sveltia CMS)
