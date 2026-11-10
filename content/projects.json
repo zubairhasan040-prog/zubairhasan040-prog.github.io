@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "title": "AI Influencer Product Showcase",
+      "video": "https://drive.google.com/file/d/1weIJAkz3kElEn5xwywfPveekqOtH6axY/view?usp=sharing",
+      "thumbnail": "/uploads/ai-influencer-product-showcase.jpg",
+      "category": "AI Influencer",
+      "client": "",
+      "year": "",
+      "description": "A 100% AI-crafted influencer showcase for ZIST Naturals serum, styled like a real Reels creator video. Selfie-style close-ups, a quick unboxing and soft sunlit shots make it feel like it was filmed on a phone at home.",
+      "tags": [],
+      "format": "landscape",
+      "featured": true,
+      "hidden": false
+    },
+    {
       "title": "Campaign Product Shoot",
       "video": "https://drive.google.com/file/d/1TPBFkmHG7Ng3rb3ygNQ8Xz0QwLy3e55P/view?usp=sharing",
       "thumbnail": "/uploads/campaign-product-shoot.jpg",
@@ -17,8 +30,8 @@
       "title": "Gen Z Fashion Transition",
       "video": "https://drive.google.com/file/d/1tLyFDR3CLMvZFYjoSJPQCTYhp5_rnKEY/view?usp=sharing",
       "thumbnail": "/uploads/gen-z-fashion-transition.jpg",
-      "category": "Fashion Edit",
-      "description": "A trendy Gen Z unboxing-to-outfit reveal for Polka Dots. A fast zoom-in match cut on the package logo, synced to the beat drop, flips a casual mirror selfie into a full kurta look in seconds.",
+      "category": "AI Fashion",
+      "description": "A 100% AI-crafted Gen Z unboxing-to-outfit reveal for Polka Dots. A fast zoom-in match cut on the package logo, synced to the beat drop, flips a casual mirror selfie into a full kurta look in seconds, so real it feels shot on a phone.",
       "client": "",
       "year": "",
       "tags": [],
