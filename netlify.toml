@@ -1,0 +1,8 @@
+# Netlify: no build step needed — the site is plain HTML/CSS/JS.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "no-cache"

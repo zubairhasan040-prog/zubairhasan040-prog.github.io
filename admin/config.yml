@@ -1,0 +1,160 @@
+# ============================================================
+#  Website editor (Sveltia CMS) — open https://YOUR-SITE/admin/
+#  >>> PLACEHOLDER: change "GITHUB_USERNAME/REPO_NAME" below to the real
+#      GitHub repository, e.g. "zubairhasan/zubairhasan.github.io".
+# ============================================================
+backend:
+  name: github
+  repo: GITHUB_USERNAME/REPO_NAME
+  branch: main
+  # Sign in by pasting a GitHub access token (works on free GitHub Pages, no extra server).
+  # Optional upgrade: deploy "Sveltia CMS Authenticator" (free Cloudflare Worker), add
+  # base_url: https://YOUR-WORKER.workers.dev  and change this line to [oauth, token].
+  auth_methods: [token]
+  commit_messages:
+    update: 'Website: update {{collection}}'
+    uploadMedia: 'Website: upload "{{path}}"'
+    deleteMedia: 'Website: delete "{{path}}"'
+
+# Uploaded thumbnails go to the /uploads folder of the website.
+media_folder: uploads
+public_folder: /uploads
+
+site_url: https://SITE_URL/
+display_url: https://SITE_URL/
+logo:
+  src: ../assets/img/favicon.svg
+
+collections:
+  - name: website
+    label: My Website
+    icon: movie
+    description: Add, edit, reorder or delete your projects, and update your profile.
+    editor:
+      preview: false
+    files:
+      # -------------------- PROJECTS --------------------
+      - name: projects
+        label: "🎬 Projects (add / edit / reorder / delete)"
+        file: content/projects.json
+        icon: video_library
+        fields:
+          - name: projects
+            label: Projects
+            label_singular: Project
+            widget: list
+            required: false
+            add_to_top: true
+            collapsed: auto
+            summary: "{{title}}  ·  {{category}}"
+            thumbnail: thumbnail
+            hint: >-
+              Click **Add Project** to add a new video. The order here is the order on the website
+              (top = first). Use the ↑ ↓ arrows (or drag ═) to reorder, and the ✕ button on a project to delete it.
+              When you are done, press **Save** — the website updates in about 1 minute.
+            fields:
+              - name: title
+                label: Project title
+                widget: string
+                hint: "e.g. AI Perfume Commercial"
+              - name: video
+                label: Video link
+                widget: string
+                pattern: ['^\s*https?://\S+\s*$', 'Paste the full link, starting with https://']
+                hint: >-
+                  Paste a **YouTube**, **Vimeo**, **Google Drive**, **Instagram Reel** or **TikTok** link.
+                  YouTube tip: upload as *Unlisted* if you don't want it public.
+                  Google Drive tip: Share → General access → **Anyone with the link**.
+              - name: thumbnail
+                label: Thumbnail image (optional)
+                widget: image
+                required: false
+                hint: >-
+                  Optional. Leave empty for YouTube — the thumbnail is added automatically.
+                  Best size: 1280 × 720 (16:9), JPG or PNG under 1 MB.
+              - name: category
+                label: Category
+                widget: select
+                required: false
+                default: AI Ad
+                options:
+                  - AI Ad
+                  - UGC Ad
+                  - Cinematic Ad
+                  - Product Showcase
+                  - Fashion & Reels
+                  - Jewellery & Beauty
+                  - AI Influencer
+                  - Music Video
+                  - Short Film
+                  - Social Media
+                  - Other
+                hint: Used for the filter buttons above your projects.
+              - name: client
+                label: Client or brand (optional)
+                widget: string
+                required: false
+              - name: year
+                label: Year (optional)
+                widget: string
+                required: false
+                pattern: ['^(\d{4})?$', 'Write a 4-digit year like 2026, or leave empty']
+              - name: description
+                label: Short description (optional)
+                widget: text
+                required: false
+                hint: One to three sentences about the idea, your role or the result.
+              - name: tags
+                label: Tags (optional)
+                widget: list
+                required: false
+                hint: Small labels like "Veo 3", "Kling", "Voiceover". Press Enter to add another.
+              - name: format
+                label: Video shape
+                widget: select
+                default: auto
+                options:
+                  - { label: "Automatic (recommended)", value: auto }
+                  - { label: "Landscape 16:9 (YouTube)", value: landscape }
+                  - { label: "Vertical 9:16 (Reels / Shorts / TikTok)", value: vertical }
+                  - { label: "Square 1:1", value: square }
+                hint: How the video player is shaped when someone presses play.
+              - name: featured
+                label: Make this project extra large
+                widget: boolean
+                required: false
+                default: false
+              - name: hidden
+                label: Hide from website (keep as draft)
+                widget: boolean
+                required: false
+                default: false
+
+      # -------------------- PROFILE --------------------
+      - name: site
+        label: "👤 Profile, bio & contact"
+        file: content/site.json
+        icon: person
+        fields:
+          - { name: name, label: Your name, widget: string }
+          - { name: role, label: Title, widget: string, hint: "e.g. AI Video Editor & Visual Creator" }
+          - { name: location, label: City / country, widget: string }
+          - { name: available, label: Show "Available for new projects" (green dot), widget: boolean, default: true, required: false }
+          - { name: availability_text, label: Availability text, widget: string, required: false }
+          - { name: headline_1, label: Big headline — line 1, widget: string, hint: "Keep it short, e.g. Scripts in." }
+          - { name: headline_2, label: Big headline — line 2 (coral italic), widget: string, hint: "e.g. Cinema out." }
+          - { name: intro, label: Short intro under the headline, widget: text }
+          - { name: bio, label: About me (bio), widget: text }
+          - name: showreel
+            label: Showreel video link (optional)
+            widget: string
+            required: false
+            hint: If you add a YouTube/Vimeo/Drive link here, a "Play showreel" button appears at the top.
+          - { name: email, label: Email, widget: string, pattern: ['^\S+@\S+\.\S+$', 'Enter a valid email'] }
+          - { name: youtube, label: YouTube link, widget: string, required: false }
+          - { name: instagram, label: Instagram link, widget: string, required: false }
+          - { name: x, label: X / Twitter link, widget: string, required: false }
+          - { name: linkedin, label: LinkedIn link, widget: string, required: false, hint: "Paste your LinkedIn profile link, e.g. https://www.linkedin.com/in/your-name/ (hidden while empty)" }
+          - { name: whatsapp, label: WhatsApp number (optional), widget: string, required: false, hint: "e.g. 923001234567 — leave empty to hide" }
+          - { name: tools, label: Tools I cut with, widget: list, required: false, hint: "Shown in the moving strip and the Toolkit section." }
+          - { name: skills, label: Skills, widget: list, required: false }
