@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "title": "Vivo AI Commercial",
+      "video": "https://drive.google.com/file/d/1B4owKUAVT_7Fx-YBdBbyZ28QkeqLVXb4/view?usp=sharing",
+      "thumbnail": "/uploads/vivo-ai-commercial.jpg",
+      "category": "AI Ad",
+      "description": "A 100% AI-crafted smartphone commercial for Vivo, with lavender-styled models and bold 3D \"Slay Every Edge\" typography. Fast crash zooms and a sweeping orbit shot give it the energy and feel of a real studio shoot.",
+      "client": "",
+      "year": "",
+      "tags": [],
+      "format": "landscape",
+      "featured": true,
+      "hidden": false
+    },
+    {
       "title": "AI Storytelling UGC Ad",
       "video": "https://drive.google.com/file/d/1VoeEHTMRkvZ-kQutShHl_aIG5EzOu5ts/view?usp=sharing",
       "thumbnail": "/uploads/ai-storytelling-ugc-ad.jpg",
