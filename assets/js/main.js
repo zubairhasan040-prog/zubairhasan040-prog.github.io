@@ -249,7 +249,15 @@
     if (tools.length) {
       var toolsUl = $('[data-tools]');
       toolsUl.textContent = '';
-      tools.forEach(function (t) { toolsUl.appendChild(el('li', null, [el('b', { 'aria-hidden': 'true', text: t.charAt(0).toUpperCase() }), t])); });
+      var LOGOS = { runway: 1, veo: 1, grok: 1, seedance: 1, openart: 1, kling: 1, elevenlabs: 1, capcut: 1, higgsfield: 1 };
+      tools.forEach(function (t) {
+        var key = t.toLowerCase().replace(/[^a-z]/g, ' ').trim().split(/\s+/)[0] || '';
+        if (t.toLowerCase().replace(/[^a-z]/g, '').indexOf('elevenlabs') === 0) key = 'elevenlabs';
+        var badge = el('b', { 'aria-hidden': 'true', class: LOGOS[key] ? 'has-logo' : '' });
+        if (LOGOS[key]) badge.appendChild(el('img', { src: 'assets/img/tools/' + key + '.png', alt: '', loading: 'lazy', width: '30', height: '30' }));
+        else badge.textContent = t.charAt(0).toUpperCase();
+        toolsUl.appendChild(el('li', null, [badge, t]));
+      });
       fillMarquee($('[data-tools-marquee]'), tools, true);
     }
     // Skills
