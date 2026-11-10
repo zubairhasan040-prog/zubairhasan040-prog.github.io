@@ -292,7 +292,6 @@ html:not(.motion) .marquee__track, html:not(.motion) .bigmarquee__track { animat
   margin: 0; max-width: 20em; font-family: var(--serif); font-weight: 300; font-variation-settings: "SOFT" 100, "opsz" 144;
   font-size: clamp(32px, 4.6vw, 72px); line-height: 1.08; letter-spacing: -.03em;
 }
-.manifesto__text .word { margin-right: .22em; }
 .stats { list-style: none; margin: clamp(56px, 8vw, 110px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
 .stats li { padding: 30px 24px 0 0; display: grid; gap: 6px; }
 .stats li + li { padding-left: 24px; border-left: 1px solid var(--line); }
