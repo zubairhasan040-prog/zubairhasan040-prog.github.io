@@ -13,23 +13,16 @@ admin/                the "Add project" editor (Sveltia CMS)
 uploads/              thumbnails you upload from the editor
 ```
 
-## 1. Put it online for free (GitHub Pages) — one time, ~10 minutes
+## 1. Where it lives
 
-1. Make a free account at https://github.com (any email).
-2. Create a **new public repository** named exactly `YOUR-USERNAME.github.io`
-   (example: `zubairhasan.github.io`). Public is required for free GitHub Pages.
-3. Upload every file in this folder to it (Add file → Upload files → drag everything in,
-   including the hidden `.nojekyll` file) → Commit.
-4. Repo **Settings → Pages** → Source: *Deploy from a branch* → Branch `main`, folder `/ (root)` → Save.
-5. After ~1 minute the site is live at `https://YOUR-USERNAME.github.io/`.
-6. Replace the placeholders (edit on GitHub, pencil icon):
-   - `admin/config.yml` → `repo: GITHUB_USERNAME/REPO_NAME` → e.g. `repo: zubairhasan/zubairhasan.github.io`
-   - `admin/config.yml` → `site_url` / `display_url` → your site link
-   - `index.html` → every `https://SITE_URL/` → your site link (this makes WhatsApp/LinkedIn previews show the image)
+- Website: https://zubairhasan040-prog.github.io/
+- Editor:  https://zubairhasan040-prog.github.io/admin/
+- Code:    https://github.com/zubairhasan040-prog/zubairhasan040-prog.github.io
+  (GitHub Pages, branch `main`, folder `/`). Every save in the editor updates the site in ~1 minute.
 
 ## 2. Adding a project (every time)
 
-1. Open `https://YOUR-SITE/admin/`
+1. Open `https://zubairhasan040-prog.github.io/admin/`
 2. First time on a device: click **Sign In Using Access Token**. Make the token at
    GitHub → Settings → Developer settings → Fine-grained tokens → *Generate new token* →
    Repository access: *Only select repositories* → your site repo →

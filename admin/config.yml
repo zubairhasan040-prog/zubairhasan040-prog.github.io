@@ -1,11 +1,9 @@
 # ============================================================
-#  Website editor (Sveltia CMS) — open https://YOUR-SITE/admin/
-#  >>> PLACEHOLDER: change "GITHUB_USERNAME/REPO_NAME" below to the real
-#      GitHub repository, e.g. "zubairhasan/zubairhasan.github.io".
+#  Website editor (Sveltia CMS) — open https://zubairhasan040-prog.github.io/admin/
 # ============================================================
 backend:
   name: github
-  repo: GITHUB_USERNAME/REPO_NAME
+  repo: zubairhasan040-prog/zubairhasan040-prog.github.io
   branch: main
   # Sign in by pasting a GitHub access token (works on free GitHub Pages, no extra server).
   # Optional upgrade: deploy "Sveltia CMS Authenticator" (free Cloudflare Worker), add
@@ -20,8 +18,8 @@ backend:
 media_folder: uploads
 public_folder: /uploads
 
-site_url: https://SITE_URL/
-display_url: https://SITE_URL/
+site_url: https://zubairhasan040-prog.github.io/
+display_url: https://zubairhasan040-prog.github.io/
 logo:
   src: ../assets/img/favicon.svg
 
