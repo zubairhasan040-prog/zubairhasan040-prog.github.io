@@ -481,10 +481,7 @@
 
     var share = $('[data-lb-share]');
     if (p.slug) {
-      var url = shareUrl(p), text = p.title + ' — ' + ((state.site && str(state.site.name)) || 'Zubair Hasan');
       share.hidden = false;
-      $('[data-share="whatsapp"]', share).href = 'https://wa.me/?text=' + encodeURIComponent(text + ' ' + url);
-      $('[data-share="x"]', share).href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
     } else share.hidden = true;
 
     var total = state.list.length;
@@ -506,12 +503,46 @@
     state.lastFocus = trigger || document.activeElement;
     fillLightbox();
     lb.hidden = false;
+    lbAnimIn();
     lockScroll(true);
     cursorHide(true);
     setTimeout(function () { var c = $('[data-close].icon-btn', lb); if (c) c.focus({ preventScroll: true }); }, 30);
   }
+  function lbInfoEls() {
+    return $$('.lightbox__info > *', lb).filter(function (x) { return !x.hidden; });
+  }
+  function lbAnimIn() {
+    if (!(motion && window.gsap)) return;
+    var panel = $('.lightbox__panel', lb), back = $('.lightbox__backdrop', lb);
+    gsap.killTweensOf([panel, back, player, $('.lightbox__bar', lb)].concat(lbInfoEls()));
+    var tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+    tl.fromTo(back, { opacity: 0 }, { opacity: 1, duration: .45, ease: 'power2.out' }, 0)
+      .fromTo(panel, { opacity: 0, y: 60, scale: .92, rotateX: 8, transformPerspective: 1200 },
+        { opacity: 1, y: 0, scale: 1, rotateX: 0, duration: .9, clearProps: 'transform' }, .05)
+      .fromTo(player, { clipPath: 'inset(0 100% 0 0 round 14px)' },
+        { clipPath: 'inset(0 0% 0 0 round 14px)', duration: 1.1, ease: 'expo.inOut', clearProps: 'clipPath' }, .2)
+      .fromTo($('.lightbox__bar', lb), { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: .6 }, .35)
+      .fromTo(lbInfoEls(), { opacity: 0, y: 28, filter: 'blur(8px)' },
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: .8, stagger: .07, clearProps: 'filter,transform' }, .45);
+  }
+  function lbAnimStep(d) {
+    if (!(motion && window.gsap)) return;
+    gsap.fromTo(player, { opacity: 0, x: 50 * d, scale: .97 }, { opacity: 1, x: 0, scale: 1, duration: .7, ease: 'expo.out', clearProps: 'transform' });
+    gsap.fromTo(lbInfoEls(), { opacity: 0, x: 30 * d }, { opacity: 1, x: 0, duration: .6, stagger: .05, ease: 'expo.out', clearProps: 'transform' });
+  }
   function closeLightbox() {
-    if (lb.hidden) return;
+    if (lb.hidden || lb._closing) return;
+    if (motion && window.gsap) {
+      lb._closing = true;
+      var panel = $('.lightbox__panel', lb), back = $('.lightbox__backdrop', lb);
+      gsap.timeline({ onComplete: function () { lb._closing = false; gsap.set([panel, back], { clearProps: 'all' }); finishClose(); } })
+        .to(panel, { opacity: 0, y: 40, scale: .95, duration: .4, ease: 'power3.in' }, 0)
+        .to(back, { opacity: 0, duration: .45, ease: 'power2.in' }, .05);
+      return;
+    }
+    finishClose();
+  }
+  function finishClose() {
     lb.hidden = true;
     player.textContent = ''; // stops the video
     lockScroll(false);
@@ -525,6 +556,7 @@
     if (state.list.length < 2) return;
     state.current = (state.current + d + state.list.length) % state.list.length;
     fillLightbox();
+    lbAnimStep(d);
   }
   $$('[data-close]', lb).forEach(function (b) { b.addEventListener('click', closeLightbox); });
   $('[data-prev]').addEventListener('click', function () { step(-1); });
