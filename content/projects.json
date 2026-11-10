@@ -1,6 +1,32 @@
 {
   "projects": [
     {
+      "title": "Campaign Product Shoot",
+      "video": "https://drive.google.com/file/d/1TPBFkmHG7Ng3rb3ygNQ8Xz0QwLy3e55P/view?usp=sharing",
+      "thumbnail": "/uploads/campaign-product-shoot.jpg",
+      "category": "AI Ad",
+      "description": "A 100% AI-crafted beauty campaign for Kalysta Paris' Peptide Mask, from the unboxing to the final glow. Clean studio shots, detailed close-ups and a soft focus pull make every frame feel like a real professional product shoot.",
+      "client": "",
+      "year": "",
+      "tags": [],
+      "format": "landscape",
+      "featured": true,
+      "hidden": false
+    },
+    {
+      "title": "Gen Z Fashion Transition",
+      "video": "https://drive.google.com/file/d/1tLyFDR3CLMvZFYjoSJPQCTYhp5_rnKEY/view?usp=sharing",
+      "thumbnail": "/uploads/gen-z-fashion-transition.jpg",
+      "category": "Fashion Edit",
+      "description": "A trendy Gen Z unboxing-to-outfit reveal for Polka Dots. A fast zoom-in match cut on the package logo, synced to the beat drop, flips a casual mirror selfie into a full kurta look in seconds.",
+      "client": "",
+      "year": "",
+      "tags": [],
+      "format": "landscape",
+      "featured": true,
+      "hidden": false
+    },
+    {
       "title": "AI UGC Ad",
       "video": "https://drive.google.com/file/d/1rwhReSIEPuF-1yj7Jb7fquGl45KCfmud/view?usp=sharing",
       "thumbnail": "/uploads/ai-ugc-ad.jpg",
