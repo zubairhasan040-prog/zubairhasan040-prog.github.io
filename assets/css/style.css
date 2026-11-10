@@ -319,10 +319,10 @@ html:not(.motion) .marquee__track, html:not(.motion) .bigmarquee__track { animat
 }
 .card-project[data-shape="vertical"] .card-project__media { aspect-ratio: 4 / 5; }
 .card-project[data-shape="square"] .card-project__media { aspect-ratio: 1; }
-.card-project__media img { position: absolute; inset: -6%; width: 112%; height: 112%; max-width: none; object-fit: cover; transition: transform 1s var(--ease-out), filter .6s; filter: saturate(.95) brightness(.88); }
-.card-project:hover .card-project__media img, .card-project:focus-visible .card-project__media img { transform: scale(1.06); filter: saturate(1.08) brightness(1); }
+.card-project__media img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center; transition: transform 1s var(--ease-out), filter .6s; filter: none; }
+.card-project:hover .card-project__media img, .card-project:focus-visible .card-project__media img { transform: scale(1.03); filter: saturate(1.06); }
 .card-project:hover .card-project__media { border-color: rgba(47, 107, 255, .5); }
-.card-project__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(11, 10, 8, .7)); pointer-events: none; }
+.card-project__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 80%, rgba(11, 10, 8, .25)); pointer-events: none; }
 .card-project__badge { position: absolute; left: 14px; top: 14px; z-index: 2; padding: 6px 12px; border-radius: 999px; background: rgba(11, 10, 8, .7); border: 1px solid var(--line); font-size: 12px; font-weight: 700; backdrop-filter: blur(8px); }
 .card-project__play {
   position: absolute; left: 50%; top: 50%; z-index: 2; width: 74px; height: 74px; margin: -37px 0 0 -37px; border-radius: 50%;
