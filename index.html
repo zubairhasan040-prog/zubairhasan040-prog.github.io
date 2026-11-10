@@ -6,8 +6,8 @@
   <title>Zubair Hasan — AI Video Editor &amp; Visual Creator</title>
   <meta name="description" content="Zubair Hasan is an AI Video Editor &amp; Visual Creator in Karachi, Pakistan. Hyper-realistic AI visuals, AI ads and UGC videos that convert.">
   <meta name="author" content="Zubair Hasan">
-  <meta name="theme-color" content="#f7edb8">
-  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#0b0a08">
+  <meta name="color-scheme" content="dark">
 
   <!-- Social sharing (WhatsApp, LinkedIn, X, Facebook). -->
   <meta property="og:type" content="website">
@@ -32,6 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,100;1,9..144,300..900,100&family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="preload" as="image" href="assets/img/zubair-cut.webp" type="image/webp">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script type="application/ld+json">
@@ -41,6 +42,7 @@
     "name": "Zubair Hasan",
     "alternateName": "Zubair ul Hasan",
     "jobTitle": "AI Video Editor & Visual Creator",
+    "image": "https://zubairhasan040-prog.github.io/assets/img/zubair.jpg",
     "email": "mailto:zubairhasan040@gmail.com",
     "address": { "@type": "PostalAddress", "addressLocality": "Karachi", "addressCountry": "PK" },
     "sameAs": [
@@ -55,15 +57,21 @@
 <body>
   <a class="skip-link" href="#work">Skip to work</a>
 
-  <!-- Intro: a film-leader countdown. Pure CSS, hides itself even if JavaScript fails. -->
-  <div class="leader" aria-hidden="true">
-    <div class="leader__ring"></div>
-    <div class="leader__cross"></div>
-    <div class="leader__nums"><span>3</span><span>2</span><span>1</span></div>
+  <!-- Preloader: counter + curtain. CSS hides it on its own if scripts never run. -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__curtain loader__curtain--top"></div>
+    <div class="loader__curtain loader__curtain--bottom"></div>
+    <div class="loader__inner">
+      <p class="loader__label"><span>ZH</span> — Loading the cut</p>
+      <div class="loader__count"><span data-loader-count>00</span><small>%</small></div>
+      <div class="loader__bar"><i data-loader-bar></i></div>
+      <p class="loader__tc"><span>REEL 01</span><span>SCENE 01</span><span>TAKE 01</span></p>
+    </div>
   </div>
 
   <div class="grain" aria-hidden="true"></div>
-  <div class="cursor" aria-hidden="true"><span>Play</span></div>
+  <div class="progress" aria-hidden="true"><i></i></div>
+  <div class="cursor" aria-hidden="true"><div class="cursor__ring"><span class="cursor__label"></span></div><div class="cursor__dot"></div></div>
 
   <header class="nav" id="top">
     <a class="nav__brand" href="#top" aria-label="Zubair Hasan — back to top">
@@ -72,21 +80,21 @@
     </a>
     <nav class="nav__links" aria-label="Main">
       <a href="#work">Work</a>
+      <a href="#services">Services</a>
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn--ink btn--sm nav__cta" href="#contact">Let's talk</a>
+    <a class="btn btn--coral btn--sm nav__cta magnetic" href="#contact"><span>Let's talk</span></a>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
       <span></span><span></span>
     </button>
   </header>
 
-  <div class="mobile-menu" id="mobile-menu" hidden>
+  <div class="mobile-menu" id="mobile-menu" hidden data-lenis-prevent>
     <nav aria-label="Mobile">
       <a href="#work"><em>01</em> Work</a>
-      <a href="#about"><em>02</em> About</a>
-      <a href="#skills"><em>03</em> Skills</a>
+      <a href="#services"><em>02</em> Services</a>
+      <a href="#about"><em>03</em> About</a>
       <a href="#contact"><em>04</em> Contact</a>
     </nav>
     <a class="mobile-menu__mail" data-bind-href="mailto" href="mailto:zubairhasan040@gmail.com" data-bind="email">zubairhasan040@gmail.com</a>
@@ -95,137 +103,206 @@
   <main id="main">
     <!-- ============ HERO ============ -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__meta reveal">
-        <span class="status" data-available="true"><i aria-hidden="true"></i><span data-bind="availability_text">Available for new projects</span></span>
-        <span class="hero__loc"><span data-bind="location">Karachi, Pakistan</span> · <time class="clock" aria-label="Local time in Karachi">--:--</time> PKT</span>
-      </div>
+      <canvas class="hero__gl" aria-hidden="true"></canvas>
+      <div class="hero__vignette" aria-hidden="true"></div>
 
-      <div class="hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow reveal"><span data-bind="name">Zubair Hasan</span> — <span data-bind="role">AI Video Editor &amp; Visual Creator</span></p>
-          <h1 class="hero__title" id="hero-title">
-            <span class="line"><span class="line__in" data-bind="headline_1">Scripts in.</span></span>
-            <span class="line"><span class="line__in"><em data-bind="headline_2">Cinema out.</em></span></span>
-          </h1>
-          <p class="hero__intro reveal" data-bind="intro">I turn scripts into hyper-realistic visuals, AI ads and authentic UGC that don't just look good — they actually convert.</p>
-          <div class="hero__actions reveal">
-            <a class="btn btn--coral" href="#work">See the work <span aria-hidden="true">↓</span></a>
-            <button class="btn btn--ghost js-reel" type="button" hidden><span class="play-dot" aria-hidden="true"></span> Play showreel</button>
-            <button class="btn btn--ghost js-copy" type="button" data-copy-email>Copy email</button>
-          </div>
+      <div class="hero__inner">
+        <div class="hero__meta" data-hero-fade>
+          <span class="status" data-available="true"><i aria-hidden="true"></i><span data-bind="availability_text">Available for new projects</span></span>
+          <span class="hero__loc"><span data-bind="location">Karachi, Pakistan</span> · <time class="clock" aria-label="Local time in Karachi">--:--</time> PKT</span>
         </div>
 
-        <figure class="hero__photo reveal">
-          <div class="photo-card">
-            <picture>
-              <source srcset="assets/img/zubair.webp" type="image/webp">
-              <img src="assets/img/zubair.jpg" width="440" height="438" alt="Zubair Hasan holding a book titled 'AI Video Editor — Mastering the art of AI visuals'" fetchpriority="high">
-            </picture>
-            <span class="rec" aria-hidden="true"><i></i> REC <span class="timecode">00:00:00:00</span></span>
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow" data-hero-fade><span data-bind="name">Zubair Hasan</span> — <span data-bind="role">AI Video Editor &amp; Visual Creator</span></p>
+            <h1 class="hero__title" id="hero-title">
+              <span class="line"><span class="line__in" data-bind="headline_1" data-split>Scripts in.</span></span>
+              <span class="line line--accent"><em class="line__in" data-bind="headline_2" data-split>Cinema out.</em></span>
+            </h1>
+            <p class="hero__intro" data-hero-fade data-bind="intro">I turn scripts into hyper-realistic visuals, AI ads and authentic UGC that don't just look good — they actually convert.</p>
+            <div class="hero__actions" data-hero-fade>
+              <a class="btn btn--coral magnetic" href="#work"><span>See the work</span> <span aria-hidden="true" class="btn__arrow">↓</span></a>
+              <button class="btn btn--ghost js-reel magnetic" type="button" hidden><span class="play-dot" aria-hidden="true"></span> <span>Play showreel</span></button>
+              <button class="btn btn--ghost js-copy magnetic" type="button" data-copy-email><span>Copy email</span></button>
+            </div>
           </div>
-          <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
-            <defs><path id="circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
-            <text><textPath href="#circle">AI VIDEO EDITOR ✦ VISUAL CREATOR ✦ KARACHI ✦ </textPath></text>
-          </svg>
-          <span class="badge__core" aria-hidden="true">✦</span>
-        </figure>
+
+          <figure class="hero__photo" data-hero-photo>
+            <div class="portrait">
+              <div class="portrait__glow" aria-hidden="true"></div>
+              <div class="portrait__arch" aria-hidden="true"></div>
+              <span class="portrait__vt" aria-hidden="true">AI Video Editor</span>
+              <picture>
+                <source srcset="assets/img/zubair-cut.webp" type="image/webp">
+                <img class="portrait__img" data-photo src="assets/img/zubair-cut.png" width="900" height="900" alt="Zubair Hasan in a blue suit and blue glasses, holding a book titled 'AI Video Editor — Mastering the art of AI visuals'" fetchpriority="high" decoding="async">
+              </picture>
+              <span class="rec" aria-hidden="true"><i></i> REC <span class="timecode">00:00:00:00</span></span>
+            </div>
+            <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><path id="circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+              <text><textPath href="#circle">AI VIDEO EDITOR ✦ VISUAL CREATOR ✦ KARACHI ✦ </textPath></text>
+            </svg>
+            <span class="badge__core" aria-hidden="true">▶</span>
+          </figure>
+        </div>
       </div>
 
       <a class="hero__scroll" href="#work" aria-label="Scroll to work"><span>Scroll</span><i aria-hidden="true"></i></a>
     </section>
 
-    <!-- ============ TOOLS MARQUEE ============ -->
+    <!-- ============ TOOLS MARQUEE (velocity skew) ============ -->
     <div class="marquee" aria-label="Tools I cut with">
-      <div class="marquee__track" data-tools-marquee>
-        <span>Runway</span><span>Veo 3</span><span>Grok</span><span>Seedance 2.5</span><span>OpenArt</span><span>Kling</span><span>ElevenLabs</span><span>CapCut</span>
+      <div class="marquee__row">
+        <div class="marquee__track" data-tools-marquee>
+          <span>Runway</span><span>Veo 3</span><span>Grok</span><span>Seedance 2.5</span><span>OpenArt</span><span>Kling</span><span>ElevenLabs</span><span>CapCut</span>
+        </div>
       </div>
     </div>
+
+    <!-- ============ MANIFESTO + STATS ============ -->
+    <section class="section manifesto" aria-label="What I do">
+      <p class="kicker" data-reveal><span class="kicker__num">00</span> The short version</p>
+      <p class="manifesto__text" data-scrub-words>I take a script, a product or just an idea and turn it into <em>hyper-real AI cinema</em> — ads, UGC and visuals cut to stop the scroll and built to convert.</p>
+      <ul class="stats">
+        <li data-reveal><b data-countup data-stat="tools">8</b><span>AI tools in the kit</span></li>
+        <li data-reveal><b data-countup data-stat="skills">14</b><span>Craft skills, end to end</span></li>
+        <li data-reveal><b data-countup>3</b><span>Formats — 9:16, 16:9, 1:1</span></li>
+        <li data-reveal><b data-countup>4</b><span>Steps from script to final cut</span></li>
+      </ul>
+    </section>
 
     <!-- ============ WORK ============ -->
     <section class="section work" id="work" aria-labelledby="work-title">
       <div class="section__head">
-        <p class="kicker reveal"><span class="kicker__num">01</span> Selected work</p>
-        <h2 class="section__title reveal" id="work-title">Frames that <em>sell.</em> <sup class="count" data-count aria-label="number of projects">00</sup></h2>
+        <p class="kicker" data-reveal><span class="kicker__num">01</span> Selected work</p>
+        <h2 class="section__title" id="work-title" data-reveal-title>Frames that <em>sell.</em> <sup class="count" data-count aria-label="number of projects">00</sup></h2>
       </div>
 
       <div class="filters" role="toolbar" aria-label="Filter projects" hidden></div>
 
-      <div class="grid" data-grid aria-live="polite"></div>
+      <div class="reel" data-reel>
+        <div class="grid" data-grid aria-live="polite"></div>
+      </div>
 
       <div class="empty" data-empty hidden>
-        <div class="slate" aria-hidden="true">
-          <div class="slate__top"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="slate__body">
-            <div><small>PROD.</small><b>New Work</b></div>
-            <div><small>SCENE</small><b>01</b></div>
-            <div><small>TAKE</small><b>01</b></div>
+        <div class="empty__screen" aria-hidden="true">
+          <div class="slate">
+            <div class="slate__top"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="slate__body">
+              <div><small>PROD.</small><b>New Work</b></div>
+              <div><small>SCENE</small><b>01</b></div>
+              <div><small>TAKE</small><b>01</b></div>
+            </div>
           </div>
+          <span class="empty__rec"><i></i> RENDERING</span>
+          <span class="empty__tc">00:00:00:00</span>
         </div>
-        <h3 class="empty__title">Fresh cuts are in the edit bay.</h3>
-        <p class="empty__text">New projects are being polished and will be here soon. Want to see recent work right now?</p>
-        <div class="empty__actions">
-          <a class="btn btn--ink" href="#contact">Ask for the latest reel</a>
-          <a class="btn btn--ghost" data-bind-href="youtube" href="https://www.youtube.com/@Cinematic_Faces" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        <div class="empty__copy">
+          <h3 class="empty__title">Fresh cuts are <em>in the edit bay.</em></h3>
+          <p class="empty__text">New projects are being graded and polished and will premiere here soon. Want to see recent work right now?</p>
+          <div class="empty__actions">
+            <a class="btn btn--coral magnetic" href="#contact"><span>Ask for the latest reel</span></a>
+            <a class="btn btn--ghost magnetic" data-bind-href="youtube" href="https://www.youtube.com/@Cinematic_Faces" target="_blank" rel="noopener"><span>Watch on YouTube ↗</span></a>
+          </div>
         </div>
       </div>
 
       <noscript><p class="noscript">Turn on JavaScript to see the projects.</p></noscript>
     </section>
 
+    <!-- ============ SERVICES ============ -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="section__head">
+        <p class="kicker" data-reveal><span class="kicker__num">02</span> Services</p>
+        <h2 class="section__title" id="services-title" data-reveal-title>What I <em>make.</em></h2>
+      </div>
+      <ol class="services__list">
+        <li class="service" data-reveal tabindex="0"><span class="service__num">01</span><h3 class="service__name">AI Ads</h3><p class="service__desc">Scroll-stopping commercials for products and brands — concept, AI visuals, edit, sound and colour.</p><span class="service__tag">Brand · Product · Launch</span></li>
+        <li class="service" data-reveal tabindex="0"><span class="service__num">02</span><h3 class="service__name">AI UGC</h3><p class="service__desc">Authentic-feeling creator videos with realistic AI models, made to test hooks fast and sell.</p><span class="service__tag">Hooks · Testimonials · TikTok</span></li>
+        <li class="service" data-reveal tabindex="0"><span class="service__num">03</span><h3 class="service__name">Hyper-real visuals</h3><p class="service__desc">Cinematic AI scenes, models and products that look shot on set — without the set.</p><span class="service__tag">Realism · Fashion · Jewellery</span></li>
+        <li class="service" data-reveal tabindex="0"><span class="service__num">04</span><h3 class="service__name">AI influencers &amp; avatars</h3><p class="service__desc">Consistent AI characters and talking heads for product showcases and social content.</p><span class="service__tag">Avatars · Talking head · Reels</span></li>
+        <li class="service" data-reveal tabindex="0"><span class="service__num">05</span><h3 class="service__name">Edit, sound &amp; colour</h3><p class="service__desc">Pacing, transitions, voice, music and grade — the finish that makes AI footage feel like cinema.</p><span class="service__tag">Editing · Sound design · Grading</span></li>
+      </ol>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section process-wrap" aria-labelledby="process-title">
+      <div class="process__side">
+        <p class="kicker" data-reveal><span class="kicker__num">03</span> Process</p>
+        <h2 class="section__title" id="process-title" data-reveal-title>Script to <em>screen.</em></h2>
+        <div class="process__meter" aria-hidden="true"><i data-process-meter></i></div>
+      </div>
+      <ol class="process">
+        <li data-reveal><span>01</span><h3>Script &amp; concept</h3><p>Your idea, hook and story shaped into a shot list built to stop the scroll.</p></li>
+        <li data-reveal><span>02</span><h3>AI visuals</h3><p>Hyper-realistic scenes, models and products generated and directed frame by frame.</p></li>
+        <li data-reveal><span>03</span><h3>Edit &amp; sound</h3><p>Pacing, transitions, voice and music cut for retention and emotion.</p></li>
+        <li data-reveal><span>04</span><h3>Colour &amp; delivery</h3><p>Graded, polished and exported for every platform: Reels, Shorts, TikTok and ads.</p></li>
+      </ol>
+    </section>
+
     <!-- ============ ABOUT ============ -->
     <section class="section about" id="about" aria-labelledby="about-title">
-      <div class="section__head">
-        <p class="kicker reveal"><span class="kicker__num">02</span> About</p>
-        <h2 class="section__title reveal" id="about-title">Imagination, <em>rendered real.</em></h2>
+      <div class="about__media" data-clip-reveal>
+        <div class="about__frame">
+          <picture>
+            <source srcset="assets/img/zubair-cut.webp" type="image/webp">
+            <img class="about__img" data-photo src="assets/img/zubair-cut.png" width="900" height="900" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="about__caption"><span data-bind="name">Zubair Hasan</span><small data-bind="location">Karachi, Pakistan</small></span>
+        </div>
       </div>
-      <div class="about__grid">
-        <p class="about__bio reveal" data-bind="bio">Hey there! I am an AI Video Editor &amp; Visual Creator dedicated to pushing the boundaries of digital content. If you are looking to turn your scripts into Hyper Realistic Visuals, AI Ads, or authentic UGC content, you are in the right place. I combine modern AI workflows with strategic editing to craft videos that don't just look good, but actually convert. As an AI Video Editor &amp; Visual Creator, I bridge the gap between imagination and reality. Let's connect!</p>
-        <ol class="process">
-          <li class="reveal"><span>01</span><h3>Script &amp; concept</h3><p>Your idea, hook and story shaped into a shot list built to stop the scroll.</p></li>
-          <li class="reveal"><span>02</span><h3>AI visuals</h3><p>Hyper-realistic scenes, models and products generated and directed frame by frame.</p></li>
-          <li class="reveal"><span>03</span><h3>Edit &amp; sound</h3><p>Pacing, transitions, voice and music cut for retention and emotion.</p></li>
-          <li class="reveal"><span>04</span><h3>Colour &amp; delivery</h3><p>Graded, polished and exported for every platform: Reels, Shorts, TikTok and ads.</p></li>
-        </ol>
+      <div class="about__body">
+        <p class="kicker" data-reveal><span class="kicker__num">04</span> About</p>
+        <h2 class="section__title" id="about-title" data-reveal-title>Imagination, <em>rendered real.</em></h2>
+        <p class="about__bio" data-reveal data-bind="bio">Hey there! I am an AI Video Editor &amp; Visual Creator dedicated to pushing the boundaries of digital content. If you are looking to turn your scripts into Hyper Realistic Visuals, AI Ads, or authentic UGC content, you are in the right place. I combine modern AI workflows with strategic editing to craft videos that don't just look good, but actually convert. As an AI Video Editor &amp; Visual Creator, I bridge the gap between imagination and reality. Let's connect!</p>
+        <div class="skills__grid" id="skills">
+          <div class="card" data-reveal>
+            <h3 class="card__title"><span aria-hidden="true">✂</span> Tools I cut with</h3>
+            <ul class="tools" data-tools></ul>
+          </div>
+          <div class="card" data-reveal>
+            <h3 class="card__title"><span aria-hidden="true">✦</span> Skills</h3>
+            <ul class="chips" data-skills></ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ============ SKILLS ============ -->
-    <section class="section skills" id="skills" aria-labelledby="skills-title">
-      <div class="section__head">
-        <p class="kicker reveal"><span class="kicker__num">03</span> Toolkit</p>
-        <h2 class="section__title reveal" id="skills-title">The <em>kit</em> behind the cut.</h2>
+    <!-- ============ SKILLS MARQUEE (big, outlined) ============ -->
+    <div class="bigmarquee" aria-hidden="true">
+      <div class="bigmarquee__track" data-skills-marquee>
+        <span>AI Video</span><span>AI Ads</span><span>AI UGC</span><span>AI Realism</span><span>Colour Grading</span><span>Sound Design</span>
       </div>
-      <div class="skills__grid">
-        <div class="card reveal">
-          <h3 class="card__title"><span aria-hidden="true">✂</span> Tools I cut with</h3>
-          <ul class="tools" data-tools></ul>
-        </div>
-        <div class="card reveal">
-          <h3 class="card__title"><span aria-hidden="true">✦</span> Skills</h3>
-          <ul class="chips" data-skills></ul>
-        </div>
-      </div>
-    </section>
+    </div>
 
     <!-- ============ CONTACT ============ -->
     <section class="section contact" id="contact" aria-labelledby="contact-title">
-      <p class="kicker reveal"><span class="kicker__num">04</span> Let's work together</p>
-      <h2 class="contact__title reveal" id="contact-title">Got a project?<br><em>Let's make it move.</em></h2>
-      <div class="contact__mail reveal">
-        <a class="contact__email" data-bind-href="mailto" href="mailto:zubairhasan040@gmail.com" data-bind="email">zubairhasan040@gmail.com</a>
-        <button class="btn btn--ghost btn--sm js-copy" type="button" data-copy-email>Copy</button>
+      <p class="kicker" data-reveal><span class="kicker__num">05</span> Let's work together</p>
+      <h2 class="contact__title" id="contact-title"><span class="line"><span class="line__in" data-split>Got a project?</span></span><span class="line line--accent"><em class="line__in" data-split>Let's make it move.</em></span></h2>
+      <div class="contact__cta" data-reveal>
+        <a class="contact__big magnetic" data-bind-href="mailto" href="mailto:zubairhasan040@gmail.com" data-cursor="view" data-cursor-label="Email">
+          <span class="contact__big-in">Start a project</span><span class="contact__big-arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
-      <ul class="socials reveal" data-socials></ul>
+      <div class="contact__mail" data-reveal>
+        <a class="contact__email" data-bind-href="mailto" href="mailto:zubairhasan040@gmail.com" data-bind="email">zubairhasan040@gmail.com</a>
+        <button class="btn btn--ghost btn--sm js-copy" type="button" data-copy-email><span>Copy</span></button>
+      </div>
+      <ul class="socials" data-reveal data-socials></ul>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© <span data-year>2026</span> <span data-bind="name">Zubair Hasan</span>. Made with care in Karachi.</p>
-    <a href="#top" class="footer__top">Back to top ↑</a>
+    <div class="footer__giant" aria-hidden="true"><span data-fit>Zubair Hasan</span></div>
+    <div class="footer__row">
+      <p>© <span data-year>2026</span> <span data-bind="name">Zubair Hasan</span>. Made with care in Karachi.</p>
+      <p class="footer__clock"><span data-bind="location">Karachi, Pakistan</span> · <time class="clock">--:--</time> PKT</p>
+      <a href="#top" class="footer__top">Back to top ↑</a>
+    </div>
   </footer>
 
   <!-- ============ VIDEO LIGHTBOX ============ -->
-  <div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+  <div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden data-lenis-prevent>
     <div class="lightbox__backdrop" data-close></div>
     <div class="lightbox__panel">
       <div class="lightbox__bar">
@@ -243,7 +320,13 @@
           <h2 class="lightbox__title" id="lb-title" data-lb-title></h2>
           <p class="lightbox__client" data-lb-client></p>
           <p class="lightbox__desc" data-lb-desc></p>
-          <ul class="chips chips--dark" data-lb-tags></ul>
+          <ul class="chips" data-lb-tags></ul>
+          <div class="lightbox__share" data-lb-share>
+            <span>Share</span>
+            <button type="button" class="share-btn" data-share="copy">Copy link</button>
+            <a class="share-btn" data-share="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="share-btn" data-share="x" href="#" target="_blank" rel="noopener">X</a>
+          </div>
           <a class="lightbox__open" data-lb-open href="#" target="_blank" rel="noopener">Open original ↗</a>
         </div>
       </div>
@@ -252,6 +335,9 @@
 
   <div class="toast" role="status" aria-live="polite" data-toast></div>
 
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

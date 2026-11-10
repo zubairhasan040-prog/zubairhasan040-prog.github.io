@@ -143,6 +143,11 @@ collections:
           - { name: headline_2, label: Big headline — line 2 (coral italic), widget: string, hint: "e.g. Cinema out." }
           - { name: intro, label: Short intro under the headline, widget: text }
           - { name: bio, label: About me (bio), widget: text }
+          - name: photo
+            label: Your photo (optional)
+            widget: image
+            required: false
+            hint: "Shown at the top and in About. Best: a PNG/WebP with a transparent background (cut-out), at least 900 px tall. A normal JPG photo is shown inside a framed card."
           - name: showreel
             label: Showreel video link (optional)
             widget: string
