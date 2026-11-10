@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "title": "AI Avatar Style Editing",
+      "video": "https://drive.google.com/file/d/1-uScwW27MarcnGrdNRw0fIzBevLNINOl/view?usp=sharing",
+      "thumbnail": "/uploads/ai-avatar-style-editing.jpg",
+      "category": "AI Avatar",
+      "client": "",
+      "year": "",
+      "description": "A 100% AI-crafted avatar video for a Codecure AI hiring campaign, edited to feel like a real corporate shoot. Animated captions, smooth zoom-ins, clean motion graphics and light-leak transitions turn a simple talking avatar into an engaging, scroll-stopping ad.",
+      "tags": [],
+      "format": "landscape",
+      "featured": true,
+      "hidden": false
+    },
+    {
       "title": "AI Model Campaign",
       "video": "https://drive.google.com/file/d/1IG11Egdb1u9YUXtfiRyDBRTZ6aMZKut3/view?usp=sharing",
       "thumbnail": "/uploads/ai-model-campaign.jpg",
