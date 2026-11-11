@@ -321,9 +321,8 @@ html:not(.motion) .marquee__track, html:not(.motion) .bigmarquee__track { animat
   border: 1px solid var(--line); transform-style: preserve-3d; will-change: transform; transition: border-color .4s;
   clip-path: inset(0 round var(--radius));
 }
-.card-project[data-shape="vertical"] .card-project__media { aspect-ratio: 4 / 5; }
-.card-project[data-shape="square"] .card-project__media { aspect-ratio: 1; }
 .card-project__media img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center; transition: transform 1s var(--ease-out), filter .6s; filter: none; }
+.card-project__media img.is-portrait-thumb { object-position: center top; }
 .card-project:hover .card-project__media img, .card-project:focus-visible .card-project__media img { transform: scale(1.03); filter: saturate(1.06); }
 .card-project:hover .card-project__media { border-color: rgba(47, 107, 255, .5); }
 .card-project__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 80%, rgba(11, 10, 8, .25)); pointer-events: none; }
@@ -349,12 +348,8 @@ html:not(.motion) .marquee__track, html:not(.motion) .bigmarquee__track { animat
 .reel.is-horizontal .grid { display: flex; flex-wrap: nowrap; gap: clamp(24px, 2.4vw, 40px); width: max-content; padding: 0 max(var(--pad), calc((100vw - var(--max)) / 2 + var(--pad))); align-items: flex-start; }
 .reel.is-horizontal .card-project { flex: none; --h: min(58vh, 560px); }
 .reel.is-horizontal .card-project .card-project__media { height: var(--h); width: calc(var(--h) * 16 / 9); aspect-ratio: auto; }
-.reel.is-horizontal .card-project[data-shape="vertical"] .card-project__media { width: calc(var(--h) * 9 / 16); }
-.reel.is-horizontal .card-project[data-shape="square"] .card-project__media { width: var(--h); }
 .reel.is-horizontal .card-project.is-featured { grid-column: auto; }
 .reel.is-horizontal .card-project__meta { max-width: calc(var(--h) * 16 / 9); }
-.reel.is-horizontal .card-project[data-shape="vertical"] .card-project__meta { max-width: max(calc(var(--h) * 9 / 16), 280px); width: calc(var(--h) * 9 / 16); }
-.reel.is-horizontal .card-project[data-shape="square"] .card-project__meta { width: var(--h); }
 .reel__hint { display: none; }
 .reel.is-horizontal + .reel__hint { display: block; }
 

@@ -358,6 +358,8 @@
     img.addEventListener('load', function () {
       // YouTube returns a 120px grey placeholder when there is no HD thumbnail.
       if (/ytimg\.com/.test(img.src) && img.naturalWidth <= 120) { next(); return; }
+      if (img.naturalHeight > img.naturalWidth) img.classList.add('is-portrait-thumb');
+      else img.classList.remove('is-portrait-thumb');
       if (poster.parentNode) poster.parentNode.removeChild(poster);
       refreshSoon();
     });
