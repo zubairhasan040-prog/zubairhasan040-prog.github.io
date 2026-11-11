@@ -59,7 +59,7 @@
 
   // Fraunces has a very decorative "&", so ampersands in serif text use the sans font.
   function ampify() {
-    $$('.about__bio, .process h3, .service__name').forEach(function (node) {
+    $$('.about__bio, .process h3, .service__name, .prompt-card__name').forEach(function (node) {
       if (node.querySelector('.amp')) return;
       var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT), list = [], t;
       while ((t = walker.nextNode())) if (t.nodeValue.indexOf('&') > -1) list.push(t);
@@ -1039,6 +1039,39 @@
               clearProps: 'transform'
             }, 0.12)
             .to(names, { yPercent: 0, duration: 0.8, stagger: 0.07 }, 0.18);
+        }
+      });
+    }
+    // Prompt Craft: staggered cards + example prompt typing
+    var promptCards = $$('[data-prompt-card]');
+    if (promptCards.length) {
+      gsap.set(promptCards, { y: 20, opacity: 0 });
+      ST.batch(promptCards, {
+        start: 'top 92%', once: true,
+        onEnter: function (els) {
+          gsap.to(els, { y: 0, opacity: 1, duration: 0.85, ease: 'expo.out', stagger: 0.08, overwrite: true, clearProps: 'transform' });
+        }
+      });
+    }
+    var promptBox = $('[data-prompt-sample]');
+    var promptEl = $('[data-prompt-type]');
+    if (promptBox && promptEl) {
+      var promptText = (promptBox.getAttribute('data-prompt') || promptEl.textContent || '').trim();
+      promptEl.textContent = '';
+      gsap.set(promptBox, { y: 18, opacity: 0 });
+      ST.create({
+        trigger: promptBox,
+        start: 'top 92%',
+        once: true,
+        onEnter: function () {
+          gsap.to(promptBox, { y: 0, opacity: 1, duration: 0.8, ease: 'expo.out', clearProps: 'transform', onComplete: function () {
+            var i = 0;
+            (function tick() {
+              i += 1;
+              promptEl.textContent = promptText.slice(0, i);
+              if (i < promptText.length) setTimeout(tick, promptText.charAt(i - 1) === ' ' ? 12 : 20);
+            }());
+          } });
         }
       });
     }
