@@ -56,13 +56,15 @@ collections:
                 widget: string
                 hint: "e.g. AI Perfume Commercial"
               - name: video
-                label: Video link
-                widget: string
-                pattern: ['^\s*https?://\S+\s*$', 'Paste the full link, starting with https://']
+                label: Video
+                widget: file
+                choose_url: true
+                media_folder: /videos
+                public_folder: /videos
                 hint: >-
-                  Paste a **YouTube**, **Vimeo**, **Google Drive**, **Instagram Reel** or **TikTok** link.
-                  YouTube tip: upload as *Unlisted* if you don't want it public.
-                  Google Drive tip: Share → General access → **Anyone with the link**.
+                  **Upload an MP4** from your computer — it will play directly on the website, in HD.
+                  Or click **URL** and paste a YouTube, Vimeo, Google Drive, Instagram or TikTok link.
+                  Keep uploads under 100 MB (around 50 MB is best so the site stays fast).
               - name: thumbnail
                 label: Thumbnail image (optional)
                 widget: image

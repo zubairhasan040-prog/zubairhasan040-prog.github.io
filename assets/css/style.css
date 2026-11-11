@@ -511,6 +511,7 @@ html:not(.motion) .process__meter { display: none; }
 .player.is-vertical { aspect-ratio: 9 / 16; width: min(100%, calc((100vh - 200px) * 9 / 16)); max-height: calc(100vh - 200px); margin: 0 auto; }
 .player.is-square { aspect-ratio: 1; width: min(100%, calc(100vh - 200px)); margin: 0 auto; }
 .player iframe, .player video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.player video { object-fit: contain; background: #000; }
 .player__fallback { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; color: var(--muted); }
 .lightbox__info { padding: 6px 6px 10px; display: grid; gap: 10px; align-content: start; }
 .lightbox__cat { margin: 0; font-size: 12px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--coral); }
