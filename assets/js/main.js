@@ -261,7 +261,8 @@
         var badge = el('b', { 'aria-hidden': 'true', class: LOGOS[key] ? 'has-logo' : '' });
         if (LOGOS[key]) badge.appendChild(el('img', { src: 'assets/img/tools/' + key + '.png?v=2', alt: '', loading: 'lazy', width: '30', height: '30' }));
         else badge.textContent = t.charAt(0).toUpperCase();
-        toolsUl.appendChild(el('li', null, [badge, t]));
+        var name = el('span', { class: 'tools__name' }, [el('span', { class: 'tools__name-inner', text: t })]);
+        toolsUl.appendChild(el('li', null, [badge, name]));
       });
       fillMarquee($('[data-tools-marquee]'), tools, true);
     }
@@ -1009,6 +1010,38 @@
     // Empty-state screen
     gsap.fromTo('.empty__screen', { scale: 0.9, clipPath: 'inset(10% 10% 10% 10% round 22px)' }, { scale: 1, clipPath: 'inset(0% 0% 0% 0% round 22px)', ease: 'none',
       scrollTrigger: { trigger: '.empty', start: 'top 95%', end: 'top 40%', scrub: 0.6 } });
+    // Tools logos: staggered fade/slide + label reveal. Float/glow is CSS after .is-alive.
+    var toolsCard = $('[data-tools-card]');
+    var toolItems = $$('.tools li');
+    if (toolsCard && toolItems.length) {
+      var toolsTitle = $('.card__title', toolsCard);
+      var titleBits = toolsTitle ? splitText(toolsTitle, false) : [];
+      var names = $$('.tools__name-inner');
+      gsap.set(titleBits, { yPercent: 90, opacity: 0 });
+      gsap.set(toolItems, { opacity: 0, y: 20 });
+      gsap.set(names, { yPercent: 115 });
+      ST.create({
+        trigger: toolsCard,
+        start: 'top 88%',
+        once: true,
+        onEnter: function () {
+          var tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+          tl.to(titleBits, { yPercent: 0, opacity: 1, duration: 0.95, stagger: 0.05 }, 0)
+            .to(toolItems, {
+              opacity: 1, y: 0, duration: 0.8,
+              stagger: {
+                each: 0.07,
+                onComplete: function () {
+                  var li = this.targets()[0];
+                  if (li) li.classList.add('is-alive');
+                }
+              },
+              clearProps: 'transform'
+            }, 0.12)
+            .to(names, { yPercent: 0, duration: 0.8, stagger: 0.07 }, 0.18);
+        }
+      });
+    }
     marquees();
   }
 
