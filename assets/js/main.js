@@ -259,7 +259,7 @@
         var key = t.toLowerCase().replace(/[^a-z]/g, ' ').trim().split(/\s+/)[0] || '';
         if (t.toLowerCase().replace(/[^a-z]/g, '').indexOf('elevenlabs') === 0) key = 'elevenlabs';
         var badge = el('b', { 'aria-hidden': 'true', class: LOGOS[key] ? 'has-logo' : '' });
-        if (LOGOS[key]) badge.appendChild(el('img', { src: 'assets/img/tools/' + key + '.png?v=2', alt: '', loading: 'lazy', width: '30', height: '30' }));
+        if (LOGOS[key]) badge.appendChild(el('img', { src: 'assets/img/tools/' + key + '.png?v=3', alt: '', loading: 'lazy', width: '30', height: '30' }));
         else badge.textContent = t.charAt(0).toUpperCase();
         var name = el('span', { class: 'tools__name' }, [el('span', { class: 'tools__name-inner', text: t })]);
         toolsUl.appendChild(el('li', null, [badge, name]));
