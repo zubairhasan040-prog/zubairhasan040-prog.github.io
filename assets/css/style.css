@@ -529,73 +529,6 @@ html:not(.motion) .process__meter { display: none; }
 }
 .toast.is-on { transform: translate(-50%, 0); visibility: visible; transition: transform .5s var(--ease-out), visibility 0s; }
 
-
-/* ---------- Prompt Craft ---------- */
-.prompt-craft { padding-top: clamp(48px, 7vw, 90px); padding-bottom: clamp(48px, 7vw, 90px); }
-.prompt-craft__head { margin: 0 0 clamp(22px, 3vw, 34px); max-width: 32em; }
-.prompt-craft__title {
-  margin: 0;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: clamp(28px, 3.4vw, 42px);
-  line-height: 1.1;
-  letter-spacing: -.03em;
-}
-.prompt-craft__title em { color: var(--coral); }
-.prompt-craft__sub { margin: 10px 0 0; color: var(--muted); font-size: 16px; }
-.prompt-craft__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
-.prompt-card {
-  padding: 18px 18px 20px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-2);
-  border: 1px solid var(--line);
-}
-.prompt-card__num { display: block; font-size: 11px; font-weight: 800; letter-spacing: .14em; color: var(--coral); }
-.prompt-card__name {
-  margin: 8px 0 6px;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 17px;
-  letter-spacing: -.02em;
-  line-height: 1.25;
-}
-.prompt-card p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
-.prompt-sample {
-  grid-column: 1 / -1;
-  margin: 2px 0 0;
-  padding: 0;
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  overflow: hidden;
-}
-.prompt-sample__bar {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--line);
-  font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
-}
-.prompt-sample__dots { display: flex; gap: 5px; }
-.prompt-sample__dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--line-2); }
-.prompt-sample__dots i:first-child { background: var(--coral); }
-.prompt-sample__body {
-  margin: 0; padding: 16px 18px 18px;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 13px; line-height: 1.65; color: var(--text);
-  white-space: pre-wrap; word-break: break-word;
-}
-.prompt-sample__caret {
-  display: inline-block; width: 7px; height: .95em; margin-left: 2px;
-  background: var(--coral); vertical-align: -2px;
-  animation: prompt-caret 1s steps(1) infinite;
-}
-@keyframes prompt-caret { 50% { opacity: 0; } }
-html:not(.motion) .prompt-sample__caret { animation: none; opacity: 0; }
-
-@media (hover: hover) and (pointer: fine) {
-  .prompt-card { transition: border-color .35s, transform .35s var(--ease-out); }
-  .prompt-card:hover { border-color: rgba(47, 107, 255, .5); transform: translateY(-2px); }
-}
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
   .lightbox__body { grid-template-columns: 1fr; }
@@ -620,7 +553,6 @@ html:not(.motion) .prompt-sample__caret { animation: none; opacity: 0; }
   .about__media { max-width: 520px; }
   .card-project.is-featured { grid-column: auto; }
   .hero__scroll { display: none; }
-  .prompt-craft__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   .nav__name { font-size: 17px; }
@@ -628,7 +560,6 @@ html:not(.motion) .prompt-sample__caret { animation: none; opacity: 0; }
   .hero__actions .btn { flex: 1 1 auto; }
   .hero__actions .js-copy { flex: 0 1 auto; }
   .skills__grid { grid-template-columns: 1fr; }
-  .prompt-craft__grid { grid-template-columns: 1fr; }
   .stats b { font-size: 64px; }
   .stats li { padding-right: 12px; }
   .stats li + li { padding-left: 14px; }
@@ -689,7 +620,6 @@ html.motion .tools li.is-alive:nth-child(3n) b { animation-duration: 5.1s; anima
 .section__title, .hero__title, .contact__title, .empty__title, .manifesto__text, .service__name { letter-spacing: -0.045em; font-weight: 700; }
 .hero__title { font-size: clamp(52px, 7.6vw, 124px); letter-spacing: -0.05em; line-height: 0.92; }
 .section__title em, .hero__title em, .contact__title em, .empty__title em, .manifesto__text em, .line--accent em,
-.prompt-craft__title em,
 .service:hover .service__name, .service:focus-visible .service__name { font-family: var(--accent-serif); font-style: italic; font-weight: 400; letter-spacing: -0.015em; }
 body { letter-spacing: -0.01em; }
 .card-project__title, .process h3, .nav__name { font-weight: 600; letter-spacing: -0.02em; }
